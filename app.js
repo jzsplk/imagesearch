@@ -7,7 +7,7 @@ var app = module.exports = express();
 app.use(bodyParser.json());
 app.use(cors());
 //get call to return JSON that format natural and unix data
-app.get('/dataValues/:dataVal', function(req, res, next){
+app.get('/dateValues/:dateVal', function(req, res, next){
     console.log('url works');
     var dateVal = req.params.dateVal;
     var dataFormattingOptions = {
@@ -30,5 +30,5 @@ app.get('/dataValues/:dataVal', function(req, res, next){
 });
 
 app.listen(3000, function(){
-    console.log("It's a working");
+    console.log("It's  working");
 });
