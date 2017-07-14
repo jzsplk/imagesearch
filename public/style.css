@@ -1,51 +1,51 @@
-/* styles */
-/* called by your view template */
-
-/* You might want to try something fancier: */
-/* less: http://lesscss.org/ */
-
-* {
-  box-sizing: border-box;
+tml,
+body {
+  height: 100%;
 }
 
 body {
-  font-family: helvetica, arial, sans-serif;
-  margin: 25px;
+  background: #A1FFCE;
+  background: -webkit-linear-gradient(to left, #A1FFCE, #FAFFD1);
+  background: linear-gradient(to left, #A1FFCE, #FAFFD1);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-h1 {
-  font-weight: bold;
-  color: pink;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-p {
-  max-width: 600px;
-}
-
-form {
-  margin-bottom: 25px;
-  padding: 15px;
-  background-color: cyan;
-  display: inline-block;
+#intro {
+  height: 40vh;
   width: 100%;
-  max-width: 340px;
-  border-radius: 3px;
+  position: relative;
 }
 
-input {
-  display: block;
-  margin-bottom: 10px;
-  padding: 5px;
-  width: 100%;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
-  font-size: 16px;
+#intro h1 {
+  font-size: 6vmin;
 }
 
+#intro h3 {
+  font-size: 4vmin;
+}
+
+a:link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+.centered {
+  text-align: center;
+  height: 50%;
+  margin: auto;
 button {
   font-size: 16px;
   border-radius: 3px;
