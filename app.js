@@ -30,5 +30,5 @@ app.get('/dataValues/:dataVal', function(req, res, next){
 });
 
 app.listen(3000, function(){
-    console.log("It's working");
+    console.log("It's a working");
 });
