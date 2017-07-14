@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 app.use(cors());
 //get call to return JSON that format natural and unix data
 app.get('/dataValues/:dataVal', function(req, res, next){
-    //console.log('url works');
+    console.log('url works');
     var dateVal = req.params.dateVal;
     var dataFormattingOptions = {
       year: 'numeric',
