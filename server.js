@@ -9,11 +9,16 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require('mongoose')
 const Bing = require('node-bing-api')({accKey: 'b0b514c15b824f02838009ea17a7ec84'});
+const searchTerm = require('./models/searchTerm');
 
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 //get call to return JSON that format natural and unix data
+
+var url = 'mongodb://jzsplk:123@ds153752.mlab.com:53752/xc';
+mongoose.connect(url);
+
 app.get('/api/imagesearch/:searchVal*', (req, res, next) => {
   var {searchVal} = req.params
   var  {offset}  = req.query
