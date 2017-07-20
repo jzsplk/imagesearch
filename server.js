@@ -14,18 +14,20 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 //get call to return JSON that format natural and unix data
-app.get('/api/imagesearch/:searchVal*', (req, res, next)=>{
-    console.log('url wo
-    //var {offset} = req.query;
+app.get('/api/imagesearch/:searchVal*', (req, res, next) => {
+  var searchVal = req.params.searchVal
+  var  offset  = req.query.offset;
+  res.json({
+    searchVal,
+    offset
+  });  
   
     
     
 });
 
-app.get("/", function (request, response) {
-  response.sendFile(__dirname + '/views/index.html');
-});
+
 
 app.listen(process.env.PORT || 3000, function(){
-    console.log("this server is  working");
+    console.log("this server is  working on" + process.env.PORT);
 });
