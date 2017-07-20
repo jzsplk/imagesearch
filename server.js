@@ -8,7 +8,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require('mongoose')
-const Bing = require('node-bing-api')({accKey: ''});
+const Bing = require('node-bing-api')({accKey: 'db6'});
 
 const app = express();
 app.use(bodyParser.json());
