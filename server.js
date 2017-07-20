@@ -8,32 +8,16 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require('mongoose')
-const Bing = require('node-bing-api')({accKey: 'db6'});
+const Bing = require('node-bing-api')({accKey: 'b0b514c15b824f02838009ea17a7ec84'});
 
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 //get call to return JSON that format natural and unix data
-app.get('/dateValues/:dateVal', function(req, res, next){
+app.get('/api/imagesearch/:searchVal*', (req, res, next)=>{
     console.log('url works');
-    var dateVal = req.params.dateVal;
-    var dataFormattingOptions = {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    };
     
-    if(isNaN(dateVal)){
-        var naturalDate = new Date(dateVal);
-        naturalDate = naturalDate.toLocaleDateString("en-us", dataFormattingOptions);
-        var unixDate = new Date(dateVal).getTime()/1000;
-    }
-    else{
-        var unixDate = dateVal;
-        var naturalDate = new Date(dateVal *1000);
-        naturalDate = naturalDate.toLocaleDateString("en-us", dataFormattingOptions);
-    }
-    res.json({unix: unixDate, natural: naturalDate});
+    
 });
 
 app.get("/", function (request, response) {
