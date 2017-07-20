@@ -14,9 +14,9 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 //get call to return JSON that format natural and unix data
-app.get('/api/imagesearch/:searchVal*', (req, res, next) => {
-  var searchVal = req.params.searchVal
-  var  offset  = req.query.offset;
+app.get('/api/imagesearch/:searchVal(*)', (req, res, next) => {
+  var {searchVal} = req.params
+  var  {offset}  = req.query
   res.json({
     searchVal,
     offset
@@ -29,5 +29,5 @@ app.get('/api/imagesearch/:searchVal*', (req, res, next) => {
 
 
 app.listen(process.env.PORT || 3000, function(){
-    console.log("this server is  working on" + process.env.PORT);
+    console.log("this server is  working on " + process.env.PORT);
 });
