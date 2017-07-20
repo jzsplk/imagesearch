@@ -4,11 +4,13 @@
  * ***************************************************/
 
 //basic required import for NodeJs
-var express = require("express");
-var bodyParser = require("body-parser");
-var cors = require("cors");
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const mongoose = require('mongoose')
+const Bing = require('node-bing-api')({accKey: ''});
 
-var app = module.exports = express();
+const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 //get call to return JSON that format natural and unix data
@@ -38,6 +40,6 @@ app.get("/", function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
 
-app.listen(3000, function(){
-    console.log("It's  working");
+app.listen(process.env.PORT || 3000, function(){
+    console.log("this server is  working");
 });
