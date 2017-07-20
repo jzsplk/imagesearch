@@ -15,7 +15,9 @@ app.use(bodyParser.json());
 app.use(cors());
 //get call to return JSON that format natural and unix data
 app.get('/api/imagesearch/:searchVal*', (req, res, next)=>{
-    console.log('url works');
+    console.log('url wo
+    //var {offset} = req.query;
+  
     
     
 });
