@@ -6,7 +6,7 @@ const searchTermSchema = new Schema(
     searchVal: String,
     searchDate: Date
   },
-  {timestamp: true}
+  {timestamps: true}
 );
 
 //connect model and collection
