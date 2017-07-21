@@ -22,6 +22,19 @@ mongoose.connect(url);
 app.get('/api/imagesearch/:searchVal*', (req, res, next) => {
   var {searchVal} = req.params
   var  {offset}  = req.query
+  
+  var data = new searchTerm({
+    searchVal,
+    searchDate: new Date()
+  });
+  
+  data.save(err => {
+    if(err){
+      res.send('Error saving to database')
+    }
+    res.json(data);
+  })
+  
   res.json({
     searchVal,
     offset
