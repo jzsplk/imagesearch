@@ -30,18 +30,28 @@ app.get('/api/imagesearch/:searchVal*', (req, res, next) => {
     searchVal,
     searchDate: new Date()
   });
-  
+  //save to searchTerm collection
   data.save(err => {
     if(err){
       res.send('Error saving to database')
     }
-    //res.json(data);
-    
-
   });
+  //Does offset
+  var searchOffset;
   
+  if(offset){
+    if(offset == 1){
+      offset=0
+      searchOffset = 1
+    }
+    else if(offset>1){
+      searchOffset = offset+1;
+    }
+    
+  }
   Bing.images(searchVal, {
-    top:10
+    top:(10 * searchOffset),
+    skip: offset
   }, function(err, rez, body){
     var bingData = [];
     
