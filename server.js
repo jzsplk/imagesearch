@@ -22,6 +22,12 @@ app.use(cors());
 var url = 'mongodb://jzsplk:123@ds153752.mlab.com:53752/xc';
 mongoose.connect(url);
 
+app.get('/api/recentsearchs', (req,res,next) => {
+  searchTerm.find({}, (err, data) => {
+    res.json(data);
+  })
+})
+
 app.get('/api/imagesearch/:searchVal*', (req, res, next) => {
   var {searchVal} = req.params
   var  {offset}  = req.query
